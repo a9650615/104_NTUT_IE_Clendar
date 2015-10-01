@@ -12,7 +12,7 @@
             $this->load->database();
             $this->site_model->data['index'] = 'admin/';
             $this->site_model->data['links'] = array(
-                                                 array('admin/add','新增')
+                                                 array(base_url().'admin/add','新增')
                                                 ); 
         }
         
@@ -40,16 +40,19 @@
             
         }
         
+        public function manage($time = NULL){
+             $this->data['data'] = $this->db->query('Select * From itinerary where Date="'.(strtotime($time)).'" order by Time asc')->result_array();
+             $this->index($time);
+        }
+        
         public function index($time = NULL){
-            
-            if($time)
-                 $data['data'] = $this->db->query('Select * From itinerary where Date='.(strtotime($time)).' order by Time asc')->result_array();
-            else
-            $data['data'] = $this->db->query('Select * From itinerary order by Date desc limit 10')->result_array();
-            $data['mode'] = 'Admin';
+            echo $time;
+            if($time == NULL)
+            $this->data['data'] = $this->db->query('Select * From itinerary order by Date desc limit 10')->result_array();
+            $this->data['mode'] = 'Admin';
             $this->site_model->load_header();
-            $this->load->view('Admin/manage', $data);
-            $this->load->view('Fronted/table', $data);
+            $this->load->view('Admin/manage', $this->data);
+            $this->load->view('Fronted/table', $this->data);
             $this->site_model->load_footer();
         }
         

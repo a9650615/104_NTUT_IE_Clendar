@@ -21,7 +21,7 @@
             <div class="col-md-8">
               <div class="col-md-3">
                 <div class="form-group internal input-group">
-                  <input type="date" class="form-control datepicker" name="data[Date]" value="<?=(isset($sql[0]))?(date('Y-m-d',$sql[0]->Date)):''?>" id="id_checkin">
+                  <input type="date" class="form-control datepicker" name="data[Date]" value="<?=(isset($sql[0]))?(date('Y-m-d',$sql[0]->Date)):date('Y-m-d')?>" id="id_checkin">
                   <span class="input-group-addon">
                     <i class="glyphicon glyphicon-calendar"></i>
                   </span>

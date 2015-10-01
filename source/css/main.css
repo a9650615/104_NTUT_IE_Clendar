@@ -4,7 +4,7 @@
 .ct{
     text-align: center;
 }
-.btn{
+.sqblock{
     padding: 2.5% 5% !important;
 }
 .mg_bot{
@@ -12,9 +12,6 @@
 }
 .n_v{
     opacity: 0;
-}
-.sqblock{
-    
 }
 .imp_{
     padding: 7px;
