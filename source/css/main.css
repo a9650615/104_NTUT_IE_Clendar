@@ -1,0 +1,16 @@
+.padd-top{
+    padding-top: 60px;
+}
+.ct{
+    text-align: center;
+}
+.btn{
+    padding: 5% !important;
+}
+.imp_{
+    padding: 7px;
+    color:#ffffff;
+    background: red;
+    border-radius: 5px;
+    box-shadow: #ccc 0px 0px 1px .3px;
+}
