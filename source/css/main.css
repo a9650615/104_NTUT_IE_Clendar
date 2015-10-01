@@ -5,7 +5,16 @@
     text-align: center;
 }
 .btn{
-    padding: 5% !important;
+    padding: 2.5% 5% !important;
+}
+.mg_bot{
+    margin-bottom: 10px;
+}
+.n_v{
+    opacity: 0;
+}
+.sqblock{
+    
 }
 .imp_{
     padding: 7px;
@@ -13,4 +22,5 @@
     background: red;
     border-radius: 5px;
     box-shadow: #ccc 0px 0px 1px .3px;
+    font-size: 10px;
 }

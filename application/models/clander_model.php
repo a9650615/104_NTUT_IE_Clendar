@@ -73,14 +73,13 @@ class Clander_model extends CI_Model{
         for($d ;$d <= 35; $d++){
            
             if($d<$this->data['all_date']+$this->data['space']){
-            $this->data['table_output'].="<a href='".base_url().'clendar/active/'.$this->data['year'].'-'.$this->data['month'].'-'.($d-$this->data['space']+1)."' class='col-sm-12 btn ".($tod==true&&($d-$this->data['space']+1)==date('d')?'btn-primary':'btn-default')."'>".($d-$this->data['space']+1);
+            $this->data['table_output'].="<a href='".base_url().'clendar/active/'.$this->data['year'].'-'.$this->data['month'].'-'.($d-$this->data['space']+1)."' class='col-sm-12 btn ".($tod==true&&($d-$this->data['space']+1)==date('d')?'btn-primary':'btn-default')." sqblock'>".($d-$this->data['space']+1);
                     $num_rows = $this->db->get_where('itinerary', array('Date'=>strtotime($this->data['year'].'-'.$this->data['month'].'-'.($d-$this->data['space']+1))))->num_rows();
                    
-                
-            $this->data['table_output'].='<p class="imp_">'.$num_rows.'</p><p>行程</p></a>';
+            $this->data['table_output'].='<p class="imp_ '.(($num_rows>0)?'':'n_v').'">'.$num_rows.'</p></a>';
             }
             else
-            $this->data['table_output'].="<div class='col-sm-12 btn btn-default'></div>"; 
+            $this->data['table_output'].="<div class='col-sm-12 btn btn-default sqblock'></div>"; 
             
             if($d%7==0)
                  $this->data['table_output'].='</div><div class="btn-group btn-group-justified" role="group" aria-label="">';
